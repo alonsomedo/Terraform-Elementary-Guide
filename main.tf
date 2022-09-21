@@ -12,14 +12,13 @@ Structure of resource block
 # resource name: "pet", logical name
 # filename, content are arguments
 resource "local_file" "pet" {
-    filename = "data/pets.txt"
-    content = "We love pets!"
-    file_permission = "0700"
+    filename = var.filename
+    content = var.content
 }
 
 
 resource "random_pet" "my-pet" {
-    prefix = "Mrs"
-    separator = "."
-    length = "1"
+    prefix = var.prefix
+    separator = var.prefix
+    length = var.length
 }
