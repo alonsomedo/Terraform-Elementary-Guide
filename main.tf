@@ -22,3 +22,9 @@ resource "random_pet" "my-pet" {
     separator = var.prefix
     length = var.length
 }
+
+
+resource "local_file" "map-test" {
+  filename = "data/map_test.txt"
+  content = var.file-content["statement2"]
+}
