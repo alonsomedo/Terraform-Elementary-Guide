@@ -15,7 +15,7 @@ variable "separator" {
 }
 
 variable "length" {
-    default = "2"
+    default = "1"
 }
 
 variable "prefix_list" {
