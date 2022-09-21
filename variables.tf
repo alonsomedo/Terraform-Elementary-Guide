@@ -18,7 +18,7 @@ variable "length" {
     default = "2"
 }
 
-variable "prefix" {
+variable "prefix_list" {
     default = ["Mr", "Mrs", "Sr"]
     type = list(string)
 }
@@ -45,7 +45,7 @@ variable "file-content-number" {
 }
 
 # Set can't have duplicates values
-variale "fruits" {
+variable "fruits" {
     type = set(string)
     default = ["apple", "banana"]
 }
