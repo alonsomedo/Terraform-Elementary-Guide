@@ -10,3 +10,4 @@
 
 ```sensitive_content``` - Used to not display the content when running terraform plan or apply.
 
+```terraform show``` - Show values of the resource attributes
