@@ -1,5 +1,5 @@
 variable "filename" {
-    default = "./data/pets.txt"
+    default = "./data_out/pets.txt"
 }
 
 variable "content" {

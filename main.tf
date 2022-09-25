@@ -28,12 +28,12 @@ resource "random_pet" "my-pet" {
 
 
 resource "local_file" "map-test" {
-  filename = "data/map_test.txt"
+  filename = "data_out/map_test.txt"
   content = var.file-content["statement2"]
 }
 
 resource "local_file" "lifecycle" {
-    filename = "data/lifecycle.txt"
+    filename = "data_out/lifecycle.txt"
     content = "My favorite pet is ${random_pet.my-pet.id}"
     # Explicit Dependency
     depends_on = [
@@ -42,6 +42,15 @@ resource "local_file" "lifecycle" {
     lifecycle {
       create_before_destroy = true
     }
+}
+
+resource "local_file" "data_source" {
+    filename = "data_out/dog_source.txt"
+    content = data.local_file.dog_source.content
+}
+
+data "local_file" "dog_source" {
+  filename = "./data_in/dog.txt"
 }
 
 output pet-name {
