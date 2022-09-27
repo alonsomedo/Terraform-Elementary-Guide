@@ -1,4 +1,6 @@
-#### Useful commands
+### Commands
+
+#### Generic commands
 
 ```terraform init``` - Set local workpsace
 
@@ -30,3 +32,25 @@
 - You need to install graphviz
 - Run command ```terraform graph | dot -Tsvg > graph.svg``` 
 
+#### State commands
+
+terraform state <subcommand> [options] [args]
+- Sub-command
+    - list: list all the resources
+    - mv: used to move items in the terraform state file. It can moves items from one state file to another. Rename resource.
+    - pull: download and display the state in remote storage backend.
+    - rm: remove items from the state file.
+    - show: show the attributes of a single resource
+
+```terraform state list aws_s3_bucket.finance-20201101```
+
+```terraform state show aws_s3_bucket.finance-20201101```
+
+```terraform state mv [options] SOURCE DESTINATION```
+```terraform state mv aws_dynamodbtable.state-locking aws_dynamodbtable.state-locking-db```
+
+
+```terraform state pull [options] SOURCE DESTINATION```
+
+```terraform state rm aws_s3_bucket.finance-20200922```
+- Remove manually the associated resource block from configuration file. If the resource was already created, it won't be deleted.
