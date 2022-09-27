@@ -54,3 +54,40 @@ terraform state <subcommand> [options] [args]
 
 ```terraform state rm aws_s3_bucket.finance-20200922```
 - Remove manually the associated resource block from configuration file. If the resource was already created, it won't be deleted.
+
+
+### Taint 
+```terraform taint aws_instance.webser``` - There would be cases where we want to force a particular resource to be recreated. Instead of using destroy and apply, we can use taint.
+
+```terraform untaint aws_instance.webser```  - Untaint resource
+
+
+### Debug, Logs
+
+```export TF_LOG=<LOG_LEVEL>``` - Set Log
+- INFO
+- WARNING
+- ERROR
+- DEBUG
+- TRACE
+
+```export TF_LOG_PATH=<PATH>``` - Set Log path
+
+```unset TF_LOG_PATH```-  Unse Log path
+
+### Import
+
+```terraform import <resource_type>.<resource_name> <attribute>``` - Import resource managed/created by other method as Ansible or AWS Management Console
+
+```terraform import aws_instance.ec2-md i-70df115bc86b07d4e```
+- attribute <instance-id>
+
+
+### Module
+
+```module <name> {
+    source = <path-to-child-module>
+} ``` 
+
+Remote Module
+ - ```terraform get``` - Download module from registry
