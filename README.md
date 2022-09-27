@@ -80,14 +80,16 @@ terraform state <subcommand> [options] [args]
 ```terraform import <resource_type>.<resource_name> <attribute>``` - Import resource managed/created by other method as Ansible or AWS Management Console
 
 ```terraform import aws_instance.ec2-md i-70df115bc86b07d4e```
-- attribute <instance-id>
+- attribute {intace-id}
 
 
 ### Module
 
-```module <name> {
+```
+module <name> {
     source = <path-to-child-module>
-} ``` 
+} 
+``` 
 
 Remote Module
  - ```terraform get``` - Download module from registry
