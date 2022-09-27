@@ -1,6 +1,6 @@
-### Commands
+## Commands
 
-#### Generic commands
+### Generic commands
 
 ```terraform init``` - Set local workpsace
 
@@ -32,7 +32,7 @@
 - You need to install graphviz
 - Run command ```terraform graph | dot -Tsvg > graph.svg``` 
 
-#### State commands
+### State commands
 
 terraform state <subcommand> [options] [args]
 - Sub-command
