@@ -47,7 +47,7 @@ terraform state <subcommand> [options] [args]
 ```terraform state show aws_s3_bucket.finance-20201101```
 
 ```terraform state mv [options] SOURCE DESTINATION```
-```terraform state mv aws_dynamodbtable.state-locking aws_dynamodbtable.state-locking-db```
+- ```terraform state mv aws_dynamodbtable.state-locking aws_dynamodbtable.state-locking-db```
 
 
 ```terraform state pull [options] SOURCE DESTINATION```
